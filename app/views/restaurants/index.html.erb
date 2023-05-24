@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h1 class="display-4 text-center mt-4 mb-5">Explore Amazing restaurants</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="https://images.prismic.io/dishoom/dc56ac3250ca3877028f2591dcef89bbb285105a_permit-room.jpg?auto=compress,format"
+          class="card-img-top" alt="restaurant Image">
+          <div class="card-body">
+            <h2 class="card-title text-primary"><%= restaurant["name"] %></h2>
+            <p class="card-text"><%= restaurant["phone_number"] %></p>
+            <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i><%= restaurant["address"] %></p>
+            <p class="card-text text-end text-muted"><small><%= restaurant["category"] %></small></p>
+            <%= link_to "Check this resto out", restaurant %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
